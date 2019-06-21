@@ -9,10 +9,11 @@
     height: 80vh;
     max-width: 33vw;
     margin-left: 50px;
-    background-color:lightcoral;
-    border:black;
+    background-color:#fff;
+    border:1px solid #ddd;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.16), 0 3px 4px rgba(0,0,0,0.23);
 }
 
 .pet-name {
