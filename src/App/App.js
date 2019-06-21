@@ -45,7 +45,7 @@ class App extends Component {
             cat: data,
             adCat: able
           })
-          console.log(data)
+          // console.log(data)
         })
 
         API.apiGetDog()
@@ -65,9 +65,10 @@ class App extends Component {
             })
             this.setState({
               dog: data,
-              adDog: able
+              adDog: able,
+              ready:true
             })
-            console.log(data)
+            // console.log(data)
           })
   }
 
@@ -83,6 +84,7 @@ class App extends Component {
       const adoptPage = (props) => {
         return(
           <Adopt 
+            ready={this.state.ready}
             cats={this.state.cat}
             dogs={this.state.dog}
             adDog={this.state.adDog}
