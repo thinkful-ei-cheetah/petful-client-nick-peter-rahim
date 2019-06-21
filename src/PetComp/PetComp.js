@@ -12,26 +12,26 @@ export default class PetComp extends Component {
             <>
             {console.log(this.props)}
                 <div className="petCol">
-                    {this.props.name}
-                    <img src={this.props.imgURL} alt={this.props.imgAlt} />
+                    <div className='pet-name'>{this.props.name}</div>
+                    <img className='pet-image' src={this.props.imgURL} alt={this.props.imgAlt} />
                     
-                    <div>
-                        <div>
+                    <div className='pet-info'>
+                        <div className='pet-sex'>
                             Sex: {this.props.sex}
                         </div>
-                        <div>
+                        <div className='pet-age'>
                             Age: {this.props.age}
                         </div>
-                        <div>
+                        <div className='pet-breed'>
                             Breed:{this.props.breed}
                         </div>
-                        <div>
+                        <div className='pet-story'>
                             story: {this.props.story}
                         </div>
                     </div>
 
-                    <button>
-                        adopt
+                    <button className='petCol-btn'>
+                        Adopt
                     </button>
                 </div>
             </>
