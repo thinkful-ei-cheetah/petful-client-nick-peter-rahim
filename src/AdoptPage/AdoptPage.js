@@ -8,8 +8,10 @@ import './AdoptPage.css'
 
 export default function Landing(props) {
 
+
     return (
         <div className='AdoptPage'>
+            {console.log(props)}
             <PetComp />
             <PetComp />
         </div>

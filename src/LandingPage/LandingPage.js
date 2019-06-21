@@ -21,11 +21,12 @@ export default function Landing(props) {
                     you gotta wait 
                 </div>
                 <div className="end-Guide slide">
-                    <NavLink
-                        className="NavToStats"
-                        to={`/adopt`}>
-                        ADOPT!
-            </NavLink>
+                        <NavLink
+                            onClick={props.handleClick}
+                            className="NavToStats"
+                            to={`/adopt`}>
+                            ADOPT!
+                        </NavLink>
                 </div>
             </section>
 

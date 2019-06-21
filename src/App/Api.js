@@ -19,7 +19,7 @@ export default class API extends Component{
     }
 
     static apiGetCat() {      
-        const apiURL = 'https://whispering-tundra-15220.herokuapp.com/stats';
+        const apiURL = 'https://fierce-bayou-88462.herokuapp.com/api/cat';
         // const queryString = this.formatQueryParams(data);
             const url = apiURL;
     
@@ -48,7 +48,7 @@ export default class API extends Component{
     }
 
     static apiDeleteCat(trail) {
-        const apiURL = 'https://whispering-tundra-15220.herokuapp.com/stats';
+        const apiURL = 'https://fierce-bayou-88462.herokuapp.com/api/cat';
         const options = {
             method: 'DELETE',
             body: JSON.stringify(trail),

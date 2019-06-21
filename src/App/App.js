@@ -1,9 +1,11 @@
+
 import React, { Component }from 'react';
 
 import { Route, Redirect , Switch} from 'react-router-dom'
 
 import './App.css';
 
+import API from './Api';
 import Oops from '../Oops/Oops';
 import Landing from '../LandingPage/LandingPage'
 import Adopt from '../AdoptPage/AdoptPage'
@@ -12,19 +14,68 @@ class App extends Component {
   constructor(){
     super();
     this.state={
-      dog : {},
-      cat : {},
+      user:'Thinkful',
+      dog : [],
+      cat : [],
+      adDog:null,
+      adCat:null,
       queue : null,
       ready : false,
-      feed : {},
     }
+  }
+
+  onLandingClick = () => {
+    console.log('i was clicked')
+    API.apiGetCat()
+      .then(res => {
+        if(!res.ok){
+          throw new Error('Something went wrong')
+        }
+        return res
+      })
+      .then(res => res.json())
+        .then(data => {
+          let able;
+          data.map(pet => {
+            if(pet.user_name === this.state.user){
+              able = pet
+            }
+          })
+          this.setState({
+            cat: data,
+            adCat: able
+          })
+          console.log(data)
+        })
+
+        API.apiGetDog()
+        .then(res => {
+          if(!res.ok){
+            throw new Error('Something went wrong')
+          }
+          return res
+        })
+        .then(res => res.json())
+          .then(data => {
+            let able = null;
+            data.map(pet => {
+              if(pet.user_name === this.state.user){
+                able = pet
+              }
+            })
+            this.setState({
+              dog: data,
+              adDog: able
+            })
+            console.log(data)
+          })
   }
 
   render(){
     const landingPage = (props) => {
       return(
         <Landing 
-      
+        handleClick={this.onLandingClick}
         />
       )
       }
@@ -32,7 +83,10 @@ class App extends Component {
       const adoptPage = (props) => {
         return(
           <Adopt 
-            
+            cats={this.state.cat}
+            dogs={this.state.dog}
+            adDog={this.state.adDog}
+            adCat={this.state.adCat}
           />
         )
         }
