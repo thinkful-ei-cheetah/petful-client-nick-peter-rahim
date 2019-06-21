@@ -10,5 +10,6 @@ export default function Landing(props) {
         <div className='LandingPage'>
             test adopt
         </div>
+        
     )
 }

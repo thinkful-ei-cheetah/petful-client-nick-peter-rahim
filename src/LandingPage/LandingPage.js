@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavLink,} from 'react-router-dom'
+import { NavLink, } from 'react-router-dom';
+import './Landing.css'
 
 
 // import PropTypes from 'prop-types';
@@ -9,7 +10,25 @@ export default function Landing(props) {
 
     return (
         <div className='LandingPage'>
-            test landing
+        <div className="splash">
+                Petful
+        </div>
+            <section className="guide">
+                <div className="guide1 slide">
+                    First in first out
+                </div>
+                <div className="guide2 slide">
+                    you gotta wait 
+                </div>
+                <div className="end-Guide slide">
+                    <NavLink
+                        className="NavToStats"
+                        to={`/adopt`}>
+                        ADOPT!
+            </NavLink>
+                </div>
+            </section>
+
         </div>
     )
 }
