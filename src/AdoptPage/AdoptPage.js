@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PetComp from '../PetComp/PetComp'
+import './AdoptPage.css'
 
 // import PropTypes from 'prop-types';
 // import ErrorBoundary from '../ErrorBoundaries/ErrorBoundary'
@@ -7,8 +9,9 @@ import React from 'react';
 export default function Landing(props) {
 
     return (
-        <div className='LandingPage'>
-            test adopt
+        <div className='AdoptPage'>
+            <PetComp />
+            <PetComp />
         </div>
         
     )

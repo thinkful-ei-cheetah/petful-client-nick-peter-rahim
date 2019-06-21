@@ -9,6 +9,16 @@ import Landing from '../LandingPage/LandingPage'
 import Adopt from '../AdoptPage/AdoptPage'
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state={
+      dog : {},
+      cat : {},
+      queue : null,
+      ready : false,
+      feed : {},
+    }
+  }
 
   render(){
     const landingPage = (props) => {
