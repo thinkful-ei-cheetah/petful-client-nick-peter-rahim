@@ -11,3 +11,9 @@ The application will simulate pet adoption by scrolling through cats and dogs; m
 - JavaScript
 - HTML5/CSS3
 - JSX
+
+### Authors
+
+>Peter Pae<br/>
+>Rahim Morgan<br />
+>Nick Lee
