@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PetComp from '../PetComp/PetComp'
+import PetComp from '../../components/PetComp/PetComp'
 import './AdoptPage.css'
 
 // import PropTypes from 'prop-types';

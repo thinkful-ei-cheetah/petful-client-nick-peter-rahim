@@ -1,7 +1,7 @@
 {
     "version": 2,
-    "name": "petful-npr",
-    "alias": "petful-npr",
+    "name": "petful-n",
+    "alias": "petful-n",
     "routes": [
       {
         "src": "^/static/(.*)",
