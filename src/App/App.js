@@ -1,114 +1,133 @@
+import React, { Component } from 'react';
 
-import React, { Component }from 'react';
-
-import { Route, Redirect , Switch} from 'react-router-dom'
+import { Route, Redirect, Switch } from 'react-router-dom';
 
 import './App.css';
 
 import API from './Api';
 import Oops from '../Oops/Oops';
-import Landing from '../LandingPage/LandingPage'
-import Adopt from '../AdoptPage/AdoptPage'
+import Landing from '../LandingPage/LandingPage';
+import Adopt from '../AdoptPage/AdoptPage';
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
-    this.state={
-      user:'Thinkful',
-      dog : [],
-      cat : [],
-      adDog:null,
-      adCat:null,
-      queue : null,
-      ready : false,
-    }
+    this.state = {
+      user: 'Thinkful',
+      dog: [],
+      cat: [],
+      adDog: null,
+      adCat: null,
+      queue: null,
+      ready: false
+    };
   }
 
   onLandingClick = () => {
-    console.log('i was clicked')
+    console.log('i was clicked');
     API.apiGetCat()
       .then(res => {
-        if(!res.ok){
-          throw new Error('Something went wrong')
+        if (!res.ok) {
+          throw new Error('Something went wrong');
         }
-        return res
+        return res;
       })
       .then(res => res.json())
-        .then(data => {
-          let able;
-          data.map(pet => {
-            if(pet.user_name === this.state.user){
-              able = pet
-            }
-          })
-          this.setState({
-            cat: data,
-            adCat: able
-          })
-          // console.log(data)
-        })
-
-        API.apiGetDog()
-        .then(res => {
-          if(!res.ok){
-            throw new Error('Something went wrong')
+      .then(data => {
+        let able;
+        data.map(pet => {
+          if (pet.user_name === this.state.user) {
+            able = pet;
           }
-          return res
-        })
-        .then(res => res.json())
-          .then(data => {
-            let able = null;
-            data.map(pet => {
-              if(pet.user_name === this.state.user){
-                able = pet
-              }
-            })
-            this.setState({
-              dog: data,
-              adDog: able,
-              ready:true
-            })
-            // console.log(data)
-          })
-  }
+        });
+        this.setState({
+          cat: data,
+          adCat: able
+        });
+        // console.log(data)
+      });
 
-  render(){
-    const landingPage = (props) => {
-      return(
-        <Landing 
-        handleClick={this.onLandingClick}
-        />
-      )
-      }
-
-      const adoptPage = (props) => {
-        return(
-          <Adopt 
-            ready={this.state.ready}
-            cats={this.state.cat}
-            dogs={this.state.dog}
-            adDog={this.state.adDog}
-            adCat={this.state.adCat}
-          />
-        )
+    API.apiGetDog()
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Something went wrong');
         }
+        return res;
+      })
+      .then(res => res.json())
+      .then(data => {
+        let able = null;
+        data.map(pet => {
+          if (pet.user_name === this.state.user) {
+            able = pet;
+          }
+        });
+        this.setState({
+          dog: data,
+          adDog: able,
+          ready: true
+        });
+        // console.log(data)
+      });
+  };
+
+  handleAdoptPet = name => {
+    //find object in array, pull from array, put in adCat or adDog respectively
+
+    try {
+      this.setState({
+        dog: this.state.dog.filter(obj => {
+          return obj.name !== name;
+        })
+      });
+      this.setState({ adDog: this.state.dog[0] });
+    } catch (error) {
+      console.log(error);
+    }
+
+    try {
+      this.setState({
+        cat: this.state.cat.filter(obj => {
+          return obj.name !== name;
+        })
+      });
+      this.setState({ adCat: this.state.cat[0] });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  render() {
+    const landingPage = props => {
+      return <Landing handleClick={this.onLandingClick} />;
+    };
+
+    const adoptPage = props => {
+      return (
+        <Adopt
+          ready={this.state.ready}
+          cats={this.state.cat}
+          dogs={this.state.dog}
+          adDog={this.state.adDog}
+          adCat={this.state.adCat}
+          handleAdoptPet={this.handleAdoptPet}
+        />
+      );
+    };
 
     return (
-    <div className="App">
-      
-      <main>
-        <Switch>
-        <Route exact path='/' component={landingPage}/>
-              <Route exact path='/adopt' component={adoptPage}/>
-              <Route exact path='/404' component={Oops}/>
-              <Redirect to='/404' />
-        </Switch>
-      </main>
-
-    </div>
-  );
+      <div className='App'>
+        <main>
+          <Switch>
+            <Route exact path='/' component={landingPage} />
+            <Route exact path='/adopt' component={adoptPage} />
+            <Route exact path='/404' component={Oops} />
+            <Redirect to='/404' />
+          </Switch>
+        </main>
+      </div>
+    );
   }
-  
 }
 
 export default App;
