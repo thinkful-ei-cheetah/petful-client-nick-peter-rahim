@@ -1,5 +1,4 @@
 import React from 'react';
-
 import PetComp from '../../components/PetComp/PetComp'
 import './AdoptPage.css'
 
