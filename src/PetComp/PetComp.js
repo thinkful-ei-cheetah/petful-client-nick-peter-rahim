@@ -28,7 +28,7 @@ export default class PetComp extends Component {
             onClick={() => this.props.adoptPet(this.props.name)}
             className='petCol-btn'
           >
-            Adopt
+            {this.props.able}
           </button>
         </div>
       </>

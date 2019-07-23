@@ -16,6 +16,7 @@ class App extends Component {
       user: 'Thinkful',
       dog: [],
       cat: [],
+      users: [],
       adDog: null,
       adCat: null,
       queue: null,
@@ -65,6 +66,21 @@ class App extends Component {
           dog: data,
           adDog: able,
           ready: true
+        });
+        // console.log(data)
+      });
+
+    API.apiGetUsers()
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Something went wrong');
+        }
+        return res;
+      })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          users: data
         });
         // console.log(data)
       });

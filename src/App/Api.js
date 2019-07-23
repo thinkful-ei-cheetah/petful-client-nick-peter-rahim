@@ -17,6 +17,21 @@ export default class API extends Component {
     return fetch(url, options);
   }
 
+  static apiGetUsers() {
+    const apiURL = 'https://fierce-bayou-88462.herokuapp.com/api/users';
+    // const queryString = this.formatQueryParams(data);
+    const url = `${localURL}api/users`;
+
+    const options = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    return fetch(url, options);
+  }
+
   static apiGetCat() {
     const apiURL = 'https://fierce-bayou-88462.herokuapp.com/api/cat';
     // const queryString = this.formatQueryParams(data);
