@@ -42,9 +42,8 @@ class App extends Component {
         });
         this.setState({
           cat: data,
-          adCat: able
+          adCat: data[0]
         });
-        // console.log(data)
       });
 
     API.apiGetDog()
@@ -64,7 +63,7 @@ class App extends Component {
         });
         this.setState({
           dog: data,
-          adDog: able,
+          adDog: data[0],
           ready: true
         });
         // console.log(data)
