@@ -24,7 +24,6 @@ class App extends Component {
   }
 
   onLandingClick = () => {
-    console.log('i was clicked');
     API.apiGetCat()
       .then(res => {
         if (!res.ok) {
@@ -72,28 +71,40 @@ class App extends Component {
   };
 
   handleAdoptPet = name => {
-    //find object in array, pull from array, put in adCat or adDog respectively
-
-    try {
-      this.setState({
-        dog: this.state.dog.filter(obj => {
-          return obj.name !== name;
-        })
-      });
-      this.setState({ adDog: this.state.dog[0] });
-    } catch (error) {
-      console.log(error);
+    if (this.state.dog.length > 1) {
+      try {
+        this.setState(
+          {
+            dog: this.state.dog.filter(obj => {
+              return obj.name !== name;
+            })
+          },
+          () => {
+            this.setState({ adDog: this.state.dog[0] });
+            console.log('dog', this.state.dog);
+          }
+        );
+      } catch (error) {
+        console.log(error);
+      }
     }
 
-    try {
-      this.setState({
-        cat: this.state.cat.filter(obj => {
-          return obj.name !== name;
-        })
-      });
-      this.setState({ adCat: this.state.cat[0] });
-    } catch (error) {
-      console.log(error);
+    if (this.state.cat.length > 1) {
+      try {
+        this.setState(
+          {
+            cat: this.state.cat.filter(obj => {
+              return obj.name !== name;
+            })
+          },
+          () => {
+            this.setState({ adCat: this.state.cat[0] });
+            console.log('cat', this.state.cat);
+          }
+        );
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 

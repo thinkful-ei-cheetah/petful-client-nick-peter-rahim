@@ -9,7 +9,6 @@ export default class PetComp extends Component {
   render() {
     return (
       <>
-        {console.log(this.props)}
         <div className='petCol'>
           <div className='pet-name'>{this.props.name}</div>
           <img

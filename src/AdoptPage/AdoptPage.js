@@ -9,27 +9,27 @@ import './AdoptPage.css';
 export default function Adopt(props) {
   let dogsArray = props.dogs.map(dog => {
     return (
-      <>
+      <li key={dog.id}>
         <img
           className='pet-array'
           src={dog.imageURL}
           alt={dog.imageDescription}
         />
         <span>{dog.name}</span>
-      </>
+      </li>
     );
   });
 
   let catsArray = props.cats.map(cat => {
     return (
-      <>
+      <li key={cat.id}>
         <img
           className='pet-array'
           src={cat.imageURL}
           alt={cat.imageDescription}
         />
         <span>{cat.name}</span>
-      </>
+      </li>
     );
   });
 
@@ -67,12 +67,11 @@ export default function Adopt(props) {
 
   return (
     <>
-      <div className='pets-list'>
+      <ul className='pets-list'>
         {dogsArray}
         {catsArray}
-      </div>
+      </ul>
       <div className='AdoptPage'>
-        {console.log(props)}
         {/* <PetComp 
                 age={props.adCat.age}
                 breed={props.adCat.breed}
