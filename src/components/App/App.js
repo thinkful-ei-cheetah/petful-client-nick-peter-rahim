@@ -4,10 +4,10 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 
 import './App.css';
 
-import API from './Api';
+import API from '../../services/pets-api-service';
 import Oops from '../Oops/Oops';
-import Landing from '../LandingPage/LandingPage';
-import Adopt from '../AdoptPage/AdoptPage';
+import Landing from '../../routes/LandingPage/LandingPage';
+import Adopt from '../../AdoptPage/AdoptPage';
 
 class App extends Component {
   constructor() {
