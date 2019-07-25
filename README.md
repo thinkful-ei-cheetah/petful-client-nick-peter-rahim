@@ -1,9 +1,11 @@
-# Petful - Client
+# FIFO Pet Adoption Agency - Client
+
+[FIFO PAA Live](https://fifo-paa.now.sh/ "Live App")
 
 ### Introduction
 
-Petful simulates a web application for pet adoption. The application maintains two queues: one for available dogs and another for available cats.
-The application will simulate pet adoption by scrolling through cats and dogs; making each pet available for adoption when the queue reaches the designated user (thinkful)
+FIFO PAA simulates a web application for pet adoption. The server maintains three singly-linked queues: one for available dogs, one for available cats, and another for logged-in users.
+The application communicates with the server to update the queues when a pet is adopted and re-renders the updated information received from the backend. 
 
 ### Server Repo
 
