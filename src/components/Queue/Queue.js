@@ -11,7 +11,7 @@ export default function Queue(props) {
       return queue.map((pet, index) => (
         <li key={index}>
           <img
-            className="pet-thumbnail"
+            className={`pet-thumbnail${!index ? ' current' : ''}`}
             src={pet.imageURL}
             alt={pet.imageDescription}
           />

@@ -18,11 +18,13 @@
 
 .pet-stats-container {
   padding: 2px 16px;
+  height: 210px;
   text-align: center;
   background-color: white;
 }
 
 .pet-name {
+  margin: 10px 0;
   font-size: 250%;
 }
 
