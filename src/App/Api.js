@@ -5,7 +5,7 @@ export default class API extends Component {
   static apiGetDog() {
     const apiURL = 'https://fierce-bayou-88462.herokuapp.com/api/dog';
     // const queryString = this.formatQueryParams(data);
-    const url = `${localURL}api/dog`;
+    const url = `${apiUrl}api/dog`;
 
     const options = {
       method: 'GET',
@@ -20,7 +20,7 @@ export default class API extends Component {
   static apiGetUsers() {
     const apiURL = 'https://fierce-bayou-88462.herokuapp.com/api/users';
     // const queryString = this.formatQueryParams(data);
-    const url = `${localURL}api/users`;
+    const url = `${apiUrl}api/users`;
 
     const options = {
       method: 'GET',
@@ -35,7 +35,7 @@ export default class API extends Component {
   static apiGetCat() {
     const apiURL = 'https://fierce-bayou-88462.herokuapp.com/api/cat';
     // const queryString = this.formatQueryParams(data);
-    const url = `${localURL}api/cat`;
+    const url = `${apiUrl}api/cat`;
 
     const options = {
       method: 'GET',
@@ -49,7 +49,7 @@ export default class API extends Component {
 
   static apiDeleteDog(trail) {
     const apiURL = 'https://fierce-bayou-88462.herokuapp.com/api/dog';
-    const url = `${localURL}api/dog`;
+    const url = `${apiUrl}api/dog`;
     const options = {
       method: 'DELETE',
       body: JSON.stringify(trail),
@@ -63,7 +63,7 @@ export default class API extends Component {
 
   static apiDeleteCat(trail) {
     const apiURL = 'https://fierce-bayou-88462.herokuapp.com/api/cat';
-    const url = `${localURL}api/cat`;
+    const url = `${apiUrl}api/cat`;
 
     const options = {
       method: 'DELETE',
