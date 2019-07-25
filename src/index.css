@@ -5,9 +5,32 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #292929;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.red {
+  color: red;
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    font-size: 80%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  body {
+    font-size: 70%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    font-size: 60%;
+  }
 }

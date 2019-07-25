@@ -1,0 +1,25 @@
+.queue {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: palegreen;
+  border: 1px solid green;
+  border-radius: 3px;
+  padding: 10px 0;
+  height: 2.5vw;
+}
+
+.queue li {
+  list-style: none;
+  list-style-type: none;
+}
+
+.pet-thumbnail {
+  width: 2.5vw;
+  height: 100%;
+  border: 1px solid green;
+  border-radius: 5px;
+}
+
+.current {
+  border: 3px solid firebrick;
+}

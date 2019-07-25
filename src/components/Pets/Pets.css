@@ -1,0 +1,67 @@
+.pets {
+  display: flex;
+  /* justify-content: space-evenly; */
+  margin: 0 10px;
+  flex-direction: column;
+  background-color: #292929;
+}
+
+.pet {
+  width: 30vw;
+}
+
+.pet-image {
+  background-size: cover;
+  background-position: center center;
+  height: 25vw;
+}
+
+.pet-stats-container {
+  padding: 2px 16px;
+  height: 210px;
+  text-align: center;
+  background-color: white;
+}
+
+.pet-name {
+  margin: 10px 0;
+  font-size: 250%;
+}
+
+.pet-info {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 125%;
+}
+
+.pet-info li {
+  display: flex;
+  line-height: 1.3;
+}
+
+.info-label {
+  flex: 1;
+  text-align: right;
+  margin-right: 20px;
+}
+
+.info {
+  flex: 1;
+  text-align: left;
+}
+
+.adopt-button {
+  padding: 12px;
+  font-size: 16px;
+  transition: 0.3s;
+  border: none;
+  background-color: palegreen;
+  cursor: pointer;
+}
+
+.adopt-button:hover {
+  background-color: green;
+  color: white;
+}

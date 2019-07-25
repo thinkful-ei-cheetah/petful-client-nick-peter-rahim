@@ -1,0 +1,19 @@
+.AdoptionPage {
+  display: flex;
+  max-width: 1000px;
+  justify-content: center;
+  margin: 0 auto 0;
+}
+
+.AdoptionPage__header {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  background-color: palegreen;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.AdoptionPage__header h2 {
+  margin: 0 15px;
+}
