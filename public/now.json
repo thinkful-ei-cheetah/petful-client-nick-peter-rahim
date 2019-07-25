@@ -1,7 +1,7 @@
 {
     "version": 2,
-    "name": "fifo-pet-adoption",
-    "alias": "petful",
+    "name": "fifo-pet-adoption-agency",
+    "alias": "fifo-paa",
     "routes": [
       {
         "src": "^/static/(.*)",
