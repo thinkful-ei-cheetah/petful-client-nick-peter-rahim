@@ -1,34 +1,54 @@
 import React, { useState, useEffect, useContext } from 'react'
-import {UserContext} from '../../contexts/user-context'
+import { UserContext } from '../../contexts/user-context'
+import './UsersQueue.css'
 
 export default function UsersQueue() {
   const [users, setUsers] = useState([])
-  const [error, setError] = useState(null)
+  const [currUser, setCurrUser] = useState(null)
+  const [queueToggle, setQueueToggle] = useState(false)
   const userContext = useContext(UserContext)
 
-
   useEffect(() => {
-    setError(null)
+    const usersQueue = userContext.getUsersQueue()
 
-    setUsers(userContext.getUsersQueue())
+    setCurrUser(usersQueue[0])
+    setUsers(usersQueue.slice(1))
 
     return () => {
-      setError(null)
+      setCurrUser(null)
+      setUsers(null)
     }
   }, [userContext])
 
   const renderUsersQueue = () => {
-    return users.map((user, index) => (
-      <li key={index}>
-        <span className="user">{`${user.firstName} ${user.lastName}`}</span>
-      </li>
-    ))
+    return (
+      <div
+        className="UsersQueue__dropdown"
+        onClick={() => setQueueToggle(!queueToggle)}
+      >
+        <button className="UsersQueue__dropdown-btn">
+          Users Queue {queueToggle ? String.fromCharCode(9650) : String.fromCharCode(9660)}
+        </button>
+        <div
+          className={`UsersQueue__dropdown-content ${queueToggle && 'expanded'}`}
+        >
+          {users.map((user, index) => (
+            <span key={index} className="UsersQueue__dropdown-user">
+              {`${user.firstName} ${user.lastName}`}
+            </span>
+          ))}
+        </div>
+      </div>
+    )
   }
 
   return (
-    <div className="users">
-      {error && <p className="red">Error: {error.message}</p>}
-      <ul className="users queue">{renderUsersQueue()}</ul>
+    <div className="UsersQueue">
+      <span className="UsersQueue__curr-user">
+        {currUser && `${currUser.firstName} is Adopting...`}
+      </span>
+      {/* <ul className="users-queue">{renderUsersQueue()}</ul> */}
+      {renderUsersQueue()}
     </div>
   )
 }

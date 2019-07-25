@@ -86,7 +86,7 @@ export default function Pets(props) {
     <div className={`pets ${type}`}>
       {error && <p className="red">Error: {error.message}</p>}
       {pets.length && renderPetNextInLine()}
-      <button onClick={handleAdopt}>Adopt</button>
+      <button className="adopt-button" onClick={handleAdopt}>Adopt</button>
       <Queue queue={pets} />
     </div>
   )

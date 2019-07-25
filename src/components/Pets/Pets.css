@@ -7,7 +7,7 @@
 }
 
 .pet {
-  min-width: 30vw;
+  width: 30vw;
 }
 
 .pet-image {
@@ -50,4 +50,18 @@
 .info {
   flex: 1;
   text-align: left;
+}
+
+.adopt-button {
+  padding: 12px;
+  font-size: 16px;
+  transition: 0.3s;
+  border: none;
+  background-color: palegreen;
+  cursor: pointer;
+}
+
+.adopt-button:hover {
+  background-color: green;
+  color: white;
 }

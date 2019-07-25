@@ -6,8 +6,10 @@ import UsersQueue from '../../components/UsersQueue/UsersQueue';
 export default function AdoptionPage() {
   return (
     <main>
-      <h2>Adoption Page</h2>
-      <UsersQueue />
+      <header className="AdoptionPage__header">
+        <h2>Adoption Page</h2>
+        <UsersQueue />
+      </header>
       <div className="AdoptionPage">
         <Pets type="dogs" />
         <Pets type="cats" />
