@@ -47,7 +47,6 @@ export default function UsersQueue() {
       <span className="UsersQueue__curr-user">
         {currUser && `${currUser.firstName} is Adopting...`}
       </span>
-      {/* <ul className="users-queue">{renderUsersQueue()}</ul> */}
       {renderUsersQueue()}
     </div>
   )

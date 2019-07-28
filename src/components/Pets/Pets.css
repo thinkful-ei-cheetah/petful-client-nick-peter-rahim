@@ -1,19 +1,22 @@
 .pets {
   display: flex;
-  /* justify-content: space-evenly; */
-  margin: 0 10px;
+  margin: 0 auto;
   flex-direction: column;
   background-color: #292929;
 }
 
 .pet {
-  width: 30vw;
+  /* width: 30vw; */
+  width: 500px;
+  transition: width 0.3s ease-in-out;
 }
 
 .pet-image {
+  transition: width 0.3s ease-in-out;
   background-size: cover;
   background-position: center center;
-  height: 25vw;
+  width: 100%;
+  height: 300px;
 }
 
 .pet-stats-container {
@@ -64,4 +67,10 @@
 .adopt-button:hover {
   background-color: green;
   color: white;
+}
+
+@media screen and (min-width: 1000px) {
+  .pets {
+    margin: 10px;
+  }
 }
