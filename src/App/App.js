@@ -24,8 +24,8 @@ class App extends Component {
     };
   }
 
-  onLandingClick = () => {
-    API.apiGetCat()
+  onLandingClick = async() => {
+    await API.apiGetCat()
       .then(res => {
         if (!res.ok) {
           throw new Error('Something went wrong');
@@ -46,7 +46,7 @@ class App extends Component {
         });
       });
 
-    API.apiGetDog()
+    await API.apiGetDog()
       .then(res => {
         if (!res.ok) {
           throw new Error('Something went wrong');
@@ -69,7 +69,7 @@ class App extends Component {
         // console.log(data)
       });
 
-    API.apiGetUsers()
+    await API.apiGetUsers()
       .then(res => {
         if (!res.ok) {
           throw new Error('Something went wrong');
@@ -140,8 +140,9 @@ class App extends Component {
         />
       );
     };
-
+ console.log(this.state.cat)
     return (
+     
       <div className='App'>
         <main>
           <Switch>
